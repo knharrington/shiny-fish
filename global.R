@@ -24,7 +24,7 @@
 # googlesheets4::gs4_create(name = "shiny-fish",
 #                           sheets = "main")
 # sheet_id <- googledrive::drive_get("shiny-fish")$id
-# column_names <- c("Species", "Length_M", "Water_DegC", "Time_UTC", "Latitude", "Longitude")
+# column_names <- c("Species", "Length_M", "Water_DegC", "DateTime_UTC", "Latitude", "Longitude", "Notes)
 # response_data <- data.table(matrix(ncol = length(column_names), nrow = 0))
 # setnames(response_data, column_names)
 # sheet_write(data = response_data,
@@ -40,3 +40,12 @@ options(
 googledrive::drive_auth(cache = ".secrets", email = "knharrington@mote.org")
 googlesheets4::gs4_auth(token = drive_token())
 sheet_id <- googledrive::drive_get("shiny-fish")$id
+
+species_list <- c("Other", "Common Snook", "Red Drum", "Tarpon", "Spotted Seatrout", 
+                  "Lane Snapper", "Yellowtail Snapper", "Sheepshead", "Scaled Sardine",
+                  "Mangrove Snapper", "Goliath Grouper", "Southern Puffer",
+                  "Tidewater Mojarra", "Guachanche Barracuda", "Ladyfish",
+                  "Bonefish", "Threadfin Herring", "Leatherjack", "Pinfish", "Southern Kingfish",
+                  "Mosquitofish", "Gulf Killifish", "Atlantic Menhaden", "Striped Anchovy", "Striped Mullet",
+                  "Inland Silverside", "Gulf Pipefish", "Atlantic Needlefish", "Florida Pompano", "Bluefish",
+                  "Invertebrate (Crustacean)", "Invertebrate (Mollusk)", "Invertebrate (Cnidarian)")
